@@ -19,6 +19,7 @@ const langs = {
 };
 
 const file = reader.readFile('./Javelin Translation - Master Sheet.xlsx');
+const reference = require('./reference.json');
 
 const sheetName = 'Work order';
 const language = 'Spanish';
@@ -35,7 +36,6 @@ temp.forEach((translation) => {
   data[dictName][label] = translation[language];
 });
 
-const reference = require('./reference.json');
 const keysPresent = Object.keys(data[dictName]);
 const refKeys = Object.keys(reference[dictName]);
 
