@@ -32,6 +32,9 @@ temp.forEach((translation) => {
   if (dict.indexOf(':') > 0) {
     label = dict.split(':')[0];
   }
+  else {
+	label = translation.Label;
+  }
   label = label.replace(/[\"\s]/g, '');
   data[dictName][label] = translation[language];
 });
